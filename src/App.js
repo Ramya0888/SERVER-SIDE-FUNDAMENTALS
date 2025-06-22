@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Login from "./Pages/Login";
+import Home from "./Pages/Home";
+
+// Import topic pages (you can create them next)
+import ServerSide from "./Pages/ServerSide";
+import HttpPage from "./Pages/HttpPage";
+import ApiRouting from "./Pages/ApiRouting";
+import Databases from "./Pages/Databases";
+import Security from "./Pages/Security";
+import Authentication from "./Pages/Authentication";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/server-side" element={<ServerSide />} />
+      <Route path="/http" element={<HttpPage />} />
+      <Route path="/api-routing" element={<ApiRouting />} />
+      <Route path="/databases" element={<Databases />} />
+      <Route path="/security" element={<Security />} />
+      <Route path="/authentication" element={<Authentication />} />
+    </Routes>
   );
 }
 
